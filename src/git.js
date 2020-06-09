@@ -192,7 +192,7 @@ function getCurrentVersion (path, filePath) {
 
 function getFirstCommitForVersion (path, filePath, version) {
   const regex = versions.getTemplate(filePath, version)
-  const command = format("git log -S'%s' --pickaxe-regex --pretty='%H|%ct' %s", regex, filePath)
+  const command = format("git log -S'%s' --pickaxe-regex --pretty='%s' %s", regex, '%H|%ct', filePath)
   return exec(command, path)
     .then(
       list => {
