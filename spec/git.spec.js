@@ -28,7 +28,9 @@ describe('Git', function () {
         lts.should.equal(true)
       } else if (version === '8' && today >= new Date('10-01-2017') && today < new Date('10-01-2018')) {
         lts.should.equal(true)
-      } else if (version === '10' && today >= new Date('10-01-2018')) {
+      } else if (version === '10' && today >= new Date('10-01-2018') && today < new Date('21-01-2019')) {
+        lts.should.equal(true)
+      } else if (version === '12' && today >= new Date('21-01-2019')) {
         lts.should.equal(true)
       } else {
         lts.should.equal(false)

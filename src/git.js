@@ -8,15 +8,17 @@ const LATEST = 'latest'
 
 function checkLTS () {
   const version = /v([0-9]+)/.exec(process.version)[ 1 ]
+  const today = new Date()
+  const tomorrow = new Date(today.getTime() + 86400000)
   const schedule = {
-    '6': new Date('2016-10-18'),
-    '8': new Date('2017-10-01'),
-    '10': new Date('2018-10-01')
+    '6': [new Date('2016-10-18'), new Date('2017-10-01')],
+    '8': [new Date('2017-10-01'), new Date('2018-10-01')],
+    '10': [new Date('2018-10-01'), new Date('2019-10-21')],
+    '12': [new Date('2019-10-21'), tomorrow]
   }
-  const startDate = schedule[ version ]
-  if (startDate) {
-    const today = new Date()
-    return today >= startDate
+  const dateRange = schedule[ version ]
+  if (dateRange) {
+    return today >= dateRange[0] && today < dateRange[1]
   } else {
     return false
   }
