@@ -16,7 +16,7 @@ function checkLTS () {
     '10': [new Date('2018-10-30'), new Date('2019-10-21')],
     '12': [new Date('2019-10-21'), tomorrow]
   }
-  const dateRange = schedule[ version ]
+  const dateRange = schedule[version]
   if (dateRange) {
     return today >= dateRange[0] && today < dateRange[1]
   } else {
