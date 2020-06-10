@@ -13,7 +13,7 @@ function checkLTS () {
   const schedule = {
     '6': [new Date('2016-10-18'), new Date('2017-10-31')],
     '8': [new Date('2017-10-31'), new Date('2018-10-30')],
-    '10': [new Date('2018-10-01'), new Date('2019-10-21')],
+    '10': [new Date('2018-10-30'), new Date('2019-10-21')],
     '12': [new Date('2019-10-21'), tomorrow]
   }
   const dateRange = schedule[ version ]
